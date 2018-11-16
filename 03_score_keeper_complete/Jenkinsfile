@@ -1,0 +1,10 @@
+@Library('everest-shared') _
+node('docker&&virtualenv') {
+    withEnv(['DJANGO_SECRET_KEY=foobar', 'DJANGO_DEBUG=true']) {
+        com.mintel.jenkins.EverestPipeline.builder(this)
+            .withFlowdockNotification("bac6aea4efa3cbee8a7e7169a8a800ab")
+            .withEcsService("gateway", "docker/Dockerfile")
+            .build()
+            .execute()
+    }
+}
