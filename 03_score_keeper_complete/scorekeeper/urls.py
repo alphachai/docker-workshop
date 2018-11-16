@@ -13,5 +13,5 @@ app_name = 'scorekeeper'
 
 urlpatterns = [
     path('', lambda x: HttpResponseRedirect(reverse_lazy('health_check_home'))),
-    path('test/', views.Test.as_view()),
+    path('score/', views.ScoreView.as_view()),
 ]

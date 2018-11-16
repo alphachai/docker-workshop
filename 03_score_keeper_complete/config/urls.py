@@ -5,7 +5,7 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.urls import path
 
 urlpatterns = [
-    path('health-check/', include('health_check.urls')),
+    path('__health/', include('health_check.urls')),
     path('admin/', admin.site.urls),
     path('', include('scorekeeper.urls', namespace='scorekeeper')),
 ]
