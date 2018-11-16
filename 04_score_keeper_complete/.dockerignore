@@ -103,3 +103,5 @@ ENV/
 
 # node packages
 node_modules/
+
+static/

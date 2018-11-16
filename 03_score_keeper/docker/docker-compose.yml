@@ -10,31 +10,6 @@ services:
         environment:
             DJANGO_DEBUG: "true"
             DJANGO_SECRET_KEY: foobar
-            DJANGO_DATABASE_URL: postgresql://scorekeeper:scorekeeper@scorekeeper-db/scorekeeper
             DJANGO_ALLOWED_HOSTS: "*"
-        depends_on:
-            - scorekeeper-db
         ports:
-            - "80"
-
-    scorekeeper-db:
-        image: postgres:9.6-alpine
-        environment:
-            POSTGRES_USER: scorekeeper
-            POSTGRES_PASSWORD: scorekeeper
-            POSTGRES_DB: scorekeeper
-
-    scorekeeper-proxy:
-        image: nginx:alpine
-        volumes:
-            - type: bind
-              source: ../config/nginx
-              target: /etc/nginx/conf.d
-        ports:
-            - "1001:80"
-        depends_on:
-            - scorekeeper
-
-volumes:
-    nginx-conf:
-    static-files:
+            - "1003:80"
