@@ -68,6 +68,10 @@ build: Pipfile.lock  ## build a Docker image of this Django project
 	echo "" >> .env; \
 	echo "Wrote dev settings to .env" 1>&2; \
 
+up-noenv: .env
+	$(DOCKER_COMPOSE) up --build -d
+.PHONY: up-noenv
+
 up: .env Pipfile.lock  ## run a dev site via docker-compose
 	$(DOCKER_COMPOSE) up --build -d
 .PHONY: up
@@ -130,9 +134,9 @@ reports/:
 
 lint: $(VIRTUALENV) reports/
 	touch reports/python.flake8
-	#$(PIPENV) check
+	$(PIPENV) check
 	$(WITH_PIPENV) flake8 --tee --exit-zero
-	$(WITH_PIPENV) ./manage.py check
+.PHONY: lint
 
 isort: $(VIRTUALENV) ## automatically sort Python imports
 	$(WITH_PIPENV) isort

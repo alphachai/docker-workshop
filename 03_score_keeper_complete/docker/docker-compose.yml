@@ -10,7 +10,7 @@ services:
         environment:
             DJANGO_DEBUG: "true"
             DJANGO_SECRET_KEY: foobar
-            DJANGO_DATABASE_URL: postgresql://gateway:gateway@gateway-db/gateway
+            DJANGO_DATABASE_URL: postgresql://scorekeeper:scorekeeper@scorekeeper-db/scorekeeper
             DJANGO_ALLOWED_HOSTS: "*"
         depends_on:
             - scorekeeper-db
