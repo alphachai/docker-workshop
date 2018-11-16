@@ -5,10 +5,12 @@ Originally presented at Mintel's Chicago office accompanied by these [slides](ht
 
 * [docker-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 * [docker-compose](https://docs.docker.com/compose/install/)
-* *optional* [pyenv](Top-like interface for container metrics) with python 3.6, pip, pipenv
-* *optional* [ctop]([https://ctop.sh](https://ctop.sh/)) - "Top-like interface for container metrics"
+* *optional* [pyenv](https://github.com/pyenv/pyenv-installer) with python 3.6, pip, pipenv
+* *optional* [ctop](https://ctop.sh/) - "Top-like interface for container metrics"
 
-To test that everything's in order, run
+
+
+Test everything is working
 
 ```bash
 docker --version
@@ -21,7 +23,8 @@ docker run -it --rm --name nyancat 06kellyjac/nyancat
 
 What's the difference between docker and a virtual machine?
 
-"It works on my machine, but not in production!"
+- It works on my machine, but not in production!"
+- Build once, deploy everywhere
 
 
 
