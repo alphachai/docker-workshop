@@ -29,7 +29,7 @@ endif
 
 WITH_PIPENV := $(PIPENV) run
 
-SERVICE_NAME := bloob
+SERVICE_NAME := scorekeeper
 DOCKER_COMPOSE := docker-compose -p "$(SERVICE_NAME)_$(shell ls -id . | cut -d' ' -f1)_$(shell id -u)" -f docker/docker-compose.yml
 CONTAINER_NAME := $(DOCKER_COMPOSE) ps | grep UP | grep -o -E "$(SERVICE_NAME)_[0-9]+_[0-9]+_$(SERVICE_NAME)_[a-z0-9_]+"
 

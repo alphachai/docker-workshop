@@ -7,7 +7,7 @@ from django.urls import path
 urlpatterns = [
     path('health-check/', include('health_check.urls')),
     path('admin/', admin.site.urls),
-    path('', include('bloob.urls', namespace='bloob')),
+    path('', include('scorekeeper.urls', namespace='scorekeeper')),
 ]
 
 if settings.DEBUG:

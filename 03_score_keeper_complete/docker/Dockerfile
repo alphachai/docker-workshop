@@ -1,26 +1,8 @@
 FROM python:3.6-slim-stretch
 
-ARG ENVIRONMENT=dev
-ARG LOG_LEVEL=INFO
-ARG GIT_HASH=
-ARG JENKINS_BUILD=
-ARG API_VERSION=
-ARG EVEREST_ENVIRONMENT=
-
 ENV APP_DIR=/app \
     PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=0 \
-    EVEREST_GIT_HASH=${GIT_HASH} \
-    API_VERSION=${API_VERSION} \
-    EVEREST_JENKINS_BUILD=${JENKINS_BUILD} \
-    EVEREST_ENVIRONMENT=${ENVIRONMENT} \
-    EVEREST_LOG_LEVEL=${LOG_LEVEL} \
-    APP_COMMIT=${GIT_HASH} \
-    APP_ENVIRONMENT=${EVEREST_ENVIRONMENT} \
-    APP_RELEASE=${API_VERSION} \
-    DJANGO_SETTINGS_MODULE=config.settings \
-    DJANGO_STATIC_ROOT=/static \
-    LD_LIBRARY_PATH=/usr/lib
+    PIP_NO_CACHE_DIR=0
 
 # Expose the gunicorn port.
 EXPOSE 80
@@ -28,7 +10,7 @@ EXPOSE 80
 # Set up health check.
 HEALTHCHECK CMD curl -f http://127.0.0.1/health-check/ || exit 1
 
-VOLUME ["/etc/nginx/conf.d", "${DJANGO_STATIC_ROOT}"]
+VOLUME ["/etc/nginx/conf.d", "/static"]
 
 WORKDIR ${APP_DIR}
 

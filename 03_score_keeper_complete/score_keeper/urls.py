@@ -7,9 +7,9 @@ from django.urls import (
     reverse_lazy,
 )
 
-from bloob import views
+from scorekeeper import views
 
-app_name = 'bloob'
+app_name = 'scorekeeper'
 
 urlpatterns = [
     path('', lambda x: HttpResponseRedirect(reverse_lazy('health_check_home'))),

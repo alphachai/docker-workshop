@@ -65,13 +65,13 @@ cp -rf config/nginx/* /etc/nginx/conf.d
 # Collect Djagno static files.
 python -B manage.py collectstatic --noinput;
 
-#if [[ "$DJANGO_DATABASE_URL" = "postgresql"* ]]; then
-#    # If using a PostgreSQL database, wait for it to be available.
-#    wait_for_postgres_ready "$DJANGO_DATABASE_URL";
-#fi
+if [[ "$DJANGO_DATABASE_URL" = "postgresql"* ]]; then
+    # If using a PostgreSQL database, wait for it to be available.
+    wait_for_postgres_ready "$DJANGO_DATABASE_URL";
+fi
 
 # Do database migrations.
-#python -B manage.py migrate;
+python -B manage.py migrate;
 
 if [[ -n "$DJANGO_DEBUG" ]]; then
     # If DJANGO_DEBUG, watch source files for changes and reload if they do.
