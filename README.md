@@ -46,7 +46,7 @@ The key thing Docker does, "build once, deploy everywhere."
 
 To understand why Docker is the new shiny, we must first understand how Docker differs from the Virtual Machines we've used in the past.
 
-![VM Stack](media/vm stack.svg)
+![VM Stack](media/vm_stack.svg)
 
 The layers in a VM stack are:
 
@@ -61,7 +61,7 @@ The layers in a VM stack are:
    * In each OS, you must install your required dependencies (for example: python, postgres, redis)
    * Finally, you add your application.
 
-![Docker Stack](media/docker stack.svg)
+![Docker Stack](media/docker_stack.svg)
 
 1. Docker also requires a **infrastructure** and a **host operating system**. However, docker only runs on Linux. Most major versions are supported.
    * You can also develop on windows (pls no) or macOS
