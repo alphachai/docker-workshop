@@ -45,7 +45,9 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
-.pytest_cache/
+junit.xml
+junit-*.xml
+reports/
 
 # Translations
 *.mo
@@ -53,8 +55,10 @@ coverage.xml
 
 # Django stuff:
 *.log
+.static_storage/
+.media/
 local_settings.py
-db.sqlite3
+*.sqlite3
 
 # Flask stuff:
 instance/
@@ -81,6 +85,9 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
+# node packages
+node_modules/
+
 # Environments
 .env
 .venv
@@ -102,3 +109,15 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# IDE project dirs
+**/.vscode/*
+**/.idea/*
+
+# vim
+**/*.swp
+
+# osx / MacOS
+.DS_Store
+
+.svn
