@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+    my_service:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/app
+        ports:
+            - "1002:80"
