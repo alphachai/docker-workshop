@@ -59,7 +59,7 @@ build: Pipfile.lock  ## build a Docker image of this Django project
 
 .env:
 	@read -p "Enter a port for your dev site: " DJANGO_DEV_PORT; \
-	echo "Dev settings (NOT FOR PRODUCTION USE!)" >> .env; \
+	echo "# Dev settings (NOT FOR PRODUCTION USE!)" >> .env; \
 	echo "DJANGO_DEBUG=true" >> .env; \
 	echo "DJANGO_SECRET_KEY=foobar" >> .env; \
 	echo "" >> .env; \
