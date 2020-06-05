@@ -3,7 +3,7 @@ python_version = "3.6"
 
 [packages]
 django-health-check = "~=3.8"
-django = "~=2.1"
+django = "~=2.2"
 django-environ = "~=0.4"
 gunicorn = "~=19.9"
 gevent = "~=1.3"
